@@ -6,11 +6,10 @@ import {
   Link
 } from "react-router-dom";
 import { Inertia } from '@inertiajs/inertia';
+import { Link as InertiaLink } from '@inertiajs/react';
+
 
 function ReactDashboard() {
-    const handleClick = () => {
-      Inertia.get('/');
-    };
   return (
     <Router>
       <div>
@@ -21,7 +20,11 @@ function ReactDashboard() {
             <li><Link to="/react-dashboard/overview">Overview</Link></li>
             <li><Link to="/react-dashboard/settings">Settings</Link></li>
           </ul>
-          <button onClick={handleClick}>Back to Home</button>
+          <InertiaLink
+              href='/'
+              as="button"
+              type="button"                    
+          >Back to Home</InertiaLink>
         </nav>
 
         <Routes>

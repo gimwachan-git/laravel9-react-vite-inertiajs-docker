@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Inertia } from '@inertiajs/inertia';
+import { Link } from '@inertiajs/react';
+
 
 function Create() {
     const [name, setName] = useState('');
@@ -51,7 +53,21 @@ function Create() {
                 </div>
                 <br />
                 <div>
-                    <button type="submit">Create</button> <button onClick={handleClick}>Back</button>
+                    <Link 
+                      href="/users" 
+                      method="post" 
+                      data={{ name, email, password }} 
+                      as="button"
+                      type="button"
+                    >
+                      Create
+                    </Link>
+                    <span> </span>
+                    <Link
+                        href='/users'
+                        as="button"
+                        type="button"
+                    >Back</Link>
                 </div>
             </form>
         </div>

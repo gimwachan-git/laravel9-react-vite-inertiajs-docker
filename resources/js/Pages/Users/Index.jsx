@@ -24,7 +24,12 @@ function Index({ users }) {
       <Link href="/users/create">go to Create User Page</Link>
       <hr />
       <div>
-          <button onClick={handleClick}>Back</button>
+      <Link
+          href='/'
+          as="button"
+          type="button"                    
+      >Back</Link>
+
       </div>
     </div>
   );

@@ -3,15 +3,13 @@ import { createRoot } from "react-dom/client";
 import { createInertiaApp, router } from "@inertiajs/react";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 
+const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+
 createInertiaApp({
-    resolve: (name) =>
-        resolvePageComponent(
-            `./Pages/${name}.jsx`,
-            import.meta.glob("./Pages/**/*.jsx")
-        ),
+    title: (title) => `${title} - ${appName}`,
+    resolve: (name) => resolvePageComponent(`./Pages/${name}.jsx`, import.meta.glob('./Pages/**/*.jsx')),
     setup({ el, App, props }) {
         createRoot(el).render(<App {...props} />);
-        return () => root.unmount();
     },
     progress: {
         // The delay after which the progress bar will appear, in milliseconds...
