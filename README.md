@@ -1,7 +1,7 @@
 # laravel9-React-inertiajs-docker
 It is a simple project to show how to use react in laravel by using inertiajs and vite in docker.
 
-## How to use ##
+## How to Use ##
 
 ### create env file ###
 copy .env.example and rename to .env
@@ -11,7 +11,7 @@ copy .env.example and rename to .env
 ```bash
 docker compose -f .docker/docker-compose.yml -p laravel-react up --build
 ```
-## use in container ##
+## Use in Container ##
 
 ### update key ###
 ```bash
