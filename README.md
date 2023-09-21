@@ -1,4 +1,5 @@
 # laravel9-React-inertiajs-docker
+It is a simple project to show how to use react in laravel by using inertiajs and vite in docker.
 
 ## How to use ##
 
