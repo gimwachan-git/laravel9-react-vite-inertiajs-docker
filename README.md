@@ -11,6 +11,7 @@ copy .env.example and rename to .env
 ```bash
 docker compose -f .docker/docker-compose.yml -p laravel-react up --build
 ```
+## use in container ##
 
 ### update key ###
 ```bash
