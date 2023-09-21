@@ -1,0 +1,4 @@
+# 使用特定版本的 Node.js
+FROM node:18-bullseye-slim
+
+WORKDIR /app
