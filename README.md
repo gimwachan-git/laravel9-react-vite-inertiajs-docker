@@ -7,8 +7,9 @@ It is a simple project to show how to use react in laravel by using inertiajs an
 copy .env.example and rename to .env
 
 ### run docker ###
+
 ```bash
-docker compose up --build
+docker compose -f .docker/docker-compose.yml -p laravel-react up --build
 ```
 
 ### update key ###
@@ -23,9 +24,16 @@ php artisan migrate
 
 ### restart docker ###
 ```bash
-docker compose down
-docker compose up
+docker stop laravel-react
+docker start laravel-react
 ```
+### other doacker command ###
+```bash
+docker compose -f .docker/docker-compose.yml -p laravel-react down
+docker compose -f .docker/docker-compose.yml -p laravel-react build
+docker compose -f .docker/docker-compose.yml -p laravel-react up
+```
+
 ## Introduction ##
 In /routes, there are some example for creating route in laravel.
 
