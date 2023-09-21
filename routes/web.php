@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\UserController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,19 +17,26 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('hello-world');
+    return Inertia::render('Home');
 });
-Route::get('/hello', function () {
-    return Inertia::render('HelloComponent');
+
+Route::get('/about', function () {
+    return Inertia::render('About');
 });
-Route::get('/react-dashboard', function () {
+
+Route::get('/contact', function () {
+    return Inertia::render('Contact');
+});
+
+Route::get('/react-dashboard/{any?}', function () {
     return Inertia::render('ReactDashboard');
-});
+})->where('any', '.*');
+
+
 Route::get('/get-data', function () {
     return response()->json([
         'data' => 'Here is some data from the server.',
     ]);
 });
-Route::get('/dashboard/{any?}', function () {
-    return Inertia::render('Dashboard');
-})->where('any', '.*');
+
+Route::resource('users', UserController::class);

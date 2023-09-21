@@ -10,8 +10,7 @@ createInertiaApp({
             import.meta.glob("./Pages/**/*.jsx")
         ),
     setup({ el, App, props }) {
-        const root = createRoot(el);
-        root.render(<App {...props} />);
+        createRoot(el).render(<App {...props} />);
         return () => root.unmount();
     },
 });
