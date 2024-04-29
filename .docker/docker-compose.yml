@@ -34,6 +34,7 @@ services:
     tty: true
 
   mysql:
+    platform: linux/x86_64
     image: mysql:5.7
     environment:
       MYSQL_DATABASE: laravel

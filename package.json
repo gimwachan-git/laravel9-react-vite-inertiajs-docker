@@ -1,5 +1,13 @@
 {
     "name": "laravel9-react-inertiajs-docker",
+    "version": "1.0.0",
+    "description": "A Laravel 9, React, Inertia.js, and Docker starter project",
+    "keywords": [
+        "laravel",
+        "react",
+        "inertia.js",
+        "docker"
+    ],
     "private": true,
     "scripts": {
         "dev": "vite",
